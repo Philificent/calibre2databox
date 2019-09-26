@@ -1,0 +1,13 @@
+{
+  "name": "calibre2databox",
+  "description": "Calibre to Databox Webhook Data Router",
+  "repository": "https://github.com/dutsonpa/calibre2databox",
+  "logo": "https://raw.githubusercontent.com/dutsonpa/calibre2databox/master/public/apple-touch-icon.png",
+  "keywords": ["node", "express", "databox", "calibre"],
+  "env": {
+    "DATABOX_TOKEN": {
+      "description": "Databox API Key",
+      "required": true
+    }
+  }
+}

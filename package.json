@@ -1,7 +1,7 @@
 {
   "name": "calibre2databox",
-  "version": "1.0.0",
-  "description": "Calibre to Databox Webhook data router",
+  "version": "19.09.26b",
+  "description": "Calibre to Databox Webhook Data Router",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js localhost 8080"
@@ -15,5 +15,5 @@
   "devDependencies": {
     "nodemon": "1.18.4"
   },
-  "keywords": []
+  "keywords": ["node", "express", "databox", "calibre"]
 }
