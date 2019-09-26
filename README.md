@@ -4,7 +4,7 @@ _Current Version: **19.09.25b**_
 
 This is a little parsing app that will take the webhook feed from calibre (calibreapp.com) and send the data to Databox (databox.com)
 
-> You will need a Calibre account and a Databox account (the free personal account will work).
+> You will need a [Calibre](https://calibreapp.com/sign-up) account and a [Databox](https://databox.com/signup) account (the free personal account will work).
 
 To use this app, you'll need to deploy it to Heroku or similar service and get it running. When the app is up and running you will see a URL you will use as a webhook in Calibre. In demo mode on CodeSandbox, the URL displayed will most-likey be a local network address such as `192.168.4.179:82/webhook`. This address will not actually work, but if you see it means that the app should at least be responding.
 
