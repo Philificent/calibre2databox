@@ -8,7 +8,7 @@ This is a little parsing app that will take the webhook feed from [Calibre](http
 
 To use this app, you'll need to deploy it to [Heroku](https://heroku.com) or similar service and get it running. When the app is up and running you will see a URL you will use as a webhook in Calibre. In demo mode on CodeSandbox, the URL displayed will most-likey be a local network address such as `192.168.4.179:82/webhook`. This address will not actually work, but if you see it means that the app should at least be responding.
 
-If deploying to Heroku, for ease of app use name it something along the lines of `youraccountname-calibre-databox`.
+If deploying to Heroku, for ease of app use name it something along the lines of `customname-calibre2databox`.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dutsonpa/calibre2databox)
 
