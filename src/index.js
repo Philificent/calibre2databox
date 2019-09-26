@@ -42,35 +42,9 @@ app.post("/webhook", (req, res) => {
       var payload = "";
       var payloadDate = req.body.created_at;
       for (var index in req.body.pages) {
-        //----------------------------------
-        // https://developers.databox.com/api/#data-attributes
-        // Databox needs data in the following format:
-        // key: 'dom-size',
-        // value: 8300,
-        // attributes: {
-        //  'page': 'Home',
-        //  'profile': 'Chrome Desktop'
-        // },
-        // date: payloadDate
-        //----------------------------------
-
-        //console.log("[index].name:", req.body.pages[index].name);
-        //console.log("[index].profile:", req.body.pages[index].profile);
-        //payload += "{key:" + req.body.pages[index].name + ",value:" + req.body.pages[index].value + "},";
-
-        // so we can loop through pages, but we need to loop through the keys in the page
         var pageName = req.body.pages[index].name;
         var profileName = req.body.pages[index].profile;
         for (var innerdex in req.body.pages[index].metrics) {
-          // console.log(
-          //   "metrics[innerdex].name:",
-          //   req.body.pages[index].metrics[innerdex].name
-          // );
-          // console.log(
-          //   "[innerdex].value:",
-          //   req.body.pages[index].metrics[innerdex].value
-          // );
-
           payload +=
             "{ key: " +
             req.body.pages[index].metrics[innerdex].name +
@@ -87,6 +61,7 @@ app.post("/webhook", (req, res) => {
             "}";
         }
       }
+      // payload built, build the response and send it back (mostly for debugging)
       res
         .status(200)
         .json({ status: "ok", pages: req.body.pages.length, payload: payload });
@@ -95,6 +70,7 @@ app.post("/webhook", (req, res) => {
         push_token: process.env.DATABOX_TOKEN
       });
       client.insertAll([payload], function(result) {
+        // payload sent to Databox!
         console.log(result);
       });
     } else {
@@ -102,9 +78,8 @@ app.post("/webhook", (req, res) => {
     }
   }
 });
-/* Moved to index.js for Heroku Deployment
+/* Moved to index.js for Heroku Deployment... nope */
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("express started on :", port);
 });
-*/
