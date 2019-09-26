@@ -1,8 +1,6 @@
 # Calibre to Databox
 
-_Current Version: **19.09.26a**_
-
-> WARNING: This current build is **UNSTABLE**, I am modifing it to run as an auto-deployable to heroku, so you can try to use this, but take caution!!
+_Current Version: **19.09.26**_
 
 This is a little parsing app that will take the webhook feed from [Calibre](https://calibreapp.com) and send the data to [Databox](https://databox.com)
 
