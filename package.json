@@ -1,6 +1,6 @@
 {
   "name": "calibre2databox",
-  "version": "19.09.26b",
+  "version": "19.09.26a",
   "description": "Calibre to Databox Webhook Data Router",
   "main": "src/index.js",
   "scripts": {
