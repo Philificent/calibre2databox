@@ -102,7 +102,9 @@ app.post("/webhook", (req, res) => {
     }
   }
 });
-
-app.listen(3000, function() {
-  console.log("express started on :3000");
+/* Moved to index.js for Heroku Deployment
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log("express started on :", port);
 });
+*/
