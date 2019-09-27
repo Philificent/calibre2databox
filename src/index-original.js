@@ -39,16 +39,16 @@ app.post("/webhook", (req, res) => {
   } else {
     // another test to make sure the POST actually has data we want
     if (req.body.hasOwnProperty("pages")) {
-      var payload = "";
+      var payload = [];
       var payloadDate = req.body.created_at;
       for (var index in req.body.pages) {
         var pageName = req.body.pages[index].name;
         var profileName = req.body.pages[index].profile;
         for (var innerdex in req.body.pages[index].metrics) {
           payload +=
-            "{ key: " +
+            "{ key: '" +
             req.body.pages[index].metrics[innerdex].name +
-            ",value: " +
+            "',value: " +
             req.body.pages[index].metrics[innerdex].value +
             ",attributes: {" +
             "'page': " +
@@ -61,24 +61,25 @@ app.post("/webhook", (req, res) => {
             "}";
         }
       }
-      // payload built, build the response and send it back (mostly for debugging)
-      res
-        .status(200)
-        .json({ status: "ok", pages: req.body.pages.length, payload: payload });
       var Databox = require("databox");
       var client = new Databox({
         push_token: process.env.DATABOX_TOKEN
       });
+      // It seems that the payload is not wrapping properly
+      // so this errors out... (check the 'return')
       client.insertAll([payload], function(result) {
-        // payload sent to Databox!
         console.log(result);
+        res.status(200).json({
+          status: "ok",
+          return: result
+        });
       });
     } else {
       res.status(200).json({ status: "ok" });
     }
   }
 });
-/* Moved to index.js for Heroku Deployment... nope */
+
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("express started on :", port);

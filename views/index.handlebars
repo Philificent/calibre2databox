@@ -8,7 +8,18 @@
     </svg>
   </section>
   <h1 class="shadow-title">WebHook for Snapshot:</h1>
+  <p class="subtext">Click the URL below to copy to your clipboard 😉</p>
   <section class="card flex-container align-center justify-center">
-    <code>{{ webhook_url }}</code>
+    <code onclick="copy2clipboard('{{ webhook_url }}')">{{ webhook_url }}</code>
   </section>
 </main>
+<script>
+  function copy2clipboard(text) {
+    var copyArea = document.createElement("textarea");
+    document.body.appendChild(copyArea);
+    copyArea.value = text;
+    copyArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(copyArea);
+  }
+</script>

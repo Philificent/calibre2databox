@@ -40,8 +40,6 @@
       justify-content: center;
     }
 
-
-
     html {
       background: #3b4856;
       background-image: radial-gradient(circle, #5eb1f1, #52a7e6, #459ddc, #3794d1, #268ac7, #2881b9, #2978ac, #296f9f, #33658c, #385b7a, #3b5168, #3b4856);
@@ -56,8 +54,9 @@
       font-size: 16px;
       position: relative;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 60px);
       margin: 0;
+      padding-bottom: 60px;
     }
 
     code {
@@ -88,19 +87,22 @@
 
     h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 36px;
     }
 
     .shadow-title {
       background: transparent;
       color: #fff;
-      font-size: 2.5vw;
       letter-spacing: 0.3vw;
-      line-height: 100px;
-      margin: 0;
+      margin: 20px 0;
       text-transform: uppercase;
-      /*text-shadow: 1px 1px 0px #D4F4FF, 2px 2px 0px #5EB1F1, 3px 3px 0px #D4F4FF, 4px 4px 0px #5EB1F1, 5px 5px 0px #D4F4FF, 6px 6px 0px #5EB1F1, 7px 7px 0px #D4F4FF, 8px 8px 0px #5EB1F1*/
       text-shadow: 1px 1px 0px #3b4856;
+      text-align: center;
+    }
+
+    .subtext {
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 0px #3b4856, -1px 1px 0px #3b4856;
     }
 
     .card {

@@ -1,6 +1,9 @@
 # Calibre to Databox
 
-_Current Version: **19.09.26**_
+_Current Version: **19.09.27a**_
+
+> Uh-Oh... turns out that it didn't actually work 😭 I am working on a fix now
+> Or you know, you can fork and make your own...
 
 This is a little parsing app that will take the webhook feed from [Calibre](https://calibreapp.com) and send the data to [Databox](https://databox.com)
 
